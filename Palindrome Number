@@ -1,0 +1,26 @@
+class Solution {
+    private:
+    void fast()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+}
+public:
+    bool isPalindrome(int x) {
+        fast();
+        int n=x;
+        long long dig=0,rev=0;
+        while(n>0){
+            dig=n%10;
+            rev=rev*10+dig;
+            n/=10;
+
+        }
+        if(rev==x)
+        return true;
+        else
+        return false;
+    }
+};
+#https://leetcode.com/submissions/detail/984490331/
