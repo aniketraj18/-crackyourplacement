@@ -1,0 +1,22 @@
+ ListNode* deleteDuplicates(ListNode* head) {
+        ListNode* dummy=new ListNode(0);
+        fast();
+        ListNode* head1=dummy;
+        ListNode* temp=head;
+        if(head==NULL)
+        return head;
+        unordered_map<int,int>m;
+        while(temp!=NULL){
+            m[temp->val]++;
+            temp=temp->next;
+        }
+        temp=head;
+        while(temp!=NULL){
+           if(m[temp->val]==1){
+               ListNode* temp1=new ListNode(temp->val);
+               head1->next=temp1;
+               head1=temp1;
+           }
+           temp=temp->next;
+    }return dummy->next;}
+};
