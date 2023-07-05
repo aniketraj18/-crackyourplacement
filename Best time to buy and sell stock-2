@@ -1,0 +1,19 @@
+class Solution {
+public:
+void fast()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+}
+    int maxProfit(vector<int>& prices) {
+        int n=prices.size();
+        fast();
+        int profit=0;
+        for(int i=0;i<n-1;i++){
+            if(prices[i+1]>prices[i]){
+                profit+=prices[i+1]-prices[i];
+            }
+        }return profit;
+    }
+};
